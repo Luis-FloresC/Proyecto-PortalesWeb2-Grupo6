@@ -78,5 +78,4 @@ idEstado int,
 primary key(idCliente),
 FOREIGN KEY(idEstado) REFERENCES Estados(idEstado)
 );
-
-
+#comentarios
