@@ -78,4 +78,45 @@ idEstado int,
 primary key(idCliente),
 FOREIGN KEY(idEstado) REFERENCES Estados(idEstado)
 );
-#comentarios
+
+#Ventas
+create table Ventas
+(
+idVenta int auto_increment,
+fechaVenta datetime default now(),
+idCliente int ,
+isv decimal(10,2),
+descuento decimal(10,2),
+subTotal decimal(10,2),
+primary key(idVenta),
+FOREIGN KEY(idCliente) REFERENCES Clientes(idCliente)
+);
+
+#detalle Ventas
+create table DetalleVentas
+(
+idVenta int ,
+idProducto int  not null,
+cantidad int not null,
+precio decimal(10,2)not null,
+primary key(idVenta,idProducto),
+FOREIGN KEY(idProducto) REFERENCES Productos(idProducto),
+FOREIGN KEY(idVenta) REFERENCES Ventas(idVenta)
+);
+
+
+create table Usuarios
+(
+idUsuario int auto_increment,
+nombreUsuario varchar(50),
+contrasenia varchar(50),
+idCargo int,
+correoElectronico varchar(100),
+idEmpleado int,
+idCliente int ,
+isEmpleado boolean,
+primary key(idUsuario),
+FOREIGN KEY(idCliente) REFERENCES Clientes(idCliente),
+FOREIGN KEY(idCargo) REFERENCES Cargos(idCargo),
+FOREIGN KEY(idEmpleado) REFERENCES Empleados(idEmpleado)
+);
