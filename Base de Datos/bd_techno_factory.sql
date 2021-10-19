@@ -79,6 +79,8 @@ primary key(idCliente),
 FOREIGN KEY(idEstado) REFERENCES Estados(idEstado)
 );
 
+
+
 #Ventas
 create table Ventas
 (
@@ -104,7 +106,22 @@ FOREIGN KEY(idProducto) REFERENCES Productos(idProducto),
 FOREIGN KEY(idVenta) REFERENCES Ventas(idVenta)
 );
 
+#Tabla de Empleados
+create table Empleados
+(
+idEmpleado int auto_increment,
+nombreEmpleado varchar(50) not null,
+apellidoEmpleado varchar(50) not null,
+genero varchar(30) not null,
+fechaNacimiento date not null,
+fechaRegistro datetime default now(),
+idEstado int,
+primary key(idEmpleado),
+FOREIGN KEY(idEstado) REFERENCES Estados(idEstado)
+);
 
+
+#Tabla de Usuarios
 create table Usuarios
 (
 idUsuario int auto_increment,
