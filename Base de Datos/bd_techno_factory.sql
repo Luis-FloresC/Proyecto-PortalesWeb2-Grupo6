@@ -1,10 +1,10 @@
 #crear base de datos
-CREATE SCHEMA `bd_techno_factory`;
+CREATE SCHEMA IF NOT EXISTS `bd_techno_factory`;
 #seleccionar la base de datos
 use `bd_techno_factory`;
 
 #tabla de estados
-create table Estados
+create table IF NOT EXISTS `Estados`
 (
 idEstado int auto_increment ,
 estado varchar(50) not null,
@@ -14,7 +14,7 @@ primary key(idEstado)
 insert into Estados (estado) values ('habilitado'),('deshabilitado');
 
 #tabla de Categorias
-create table Categorias
+create table IF NOT EXISTS `Categorias`
 (
 idCategoria int auto_increment,
 descripcionCategoria varchar(50) not null,
@@ -22,7 +22,7 @@ primary key(idCategoria)
 );
 
 #tabla de marcas
-create table Marcas
+create table IF NOT EXISTS `Marcas`
 (
 idMarca int auto_increment,
 descripcionMarca varchar(50) not null,
@@ -30,7 +30,7 @@ primary key(idMarca)
 );
 
 #tabla de Modelos
-create table Modelos
+create table IF NOT EXISTS `Modelos`
 (
 idModelo int auto_increment,
 descripcionModelo varchar(50) not null,
@@ -40,7 +40,7 @@ FOREIGN KEY(idMarca) REFERENCES Marcas(idMarca)
 );
 
 #tabla de cargos 
-create table Cargos
+create table IF NOT EXISTS `Cargos`
 (
 idCargo int auto_increment,
 descripcionCargo varchar(50) not null,
@@ -48,7 +48,7 @@ primary key(idCargo)
 );
 
 #tabla de Productos
-create table Productos
+create table IF NOT EXISTS `Productos`
 (
 idProducto int auto_increment,
 nombreProducto varchar(50) not null,
@@ -66,7 +66,7 @@ FOREIGN KEY(idCategoria) REFERENCES Categorias(idCategoria)
 );
 
 #tabla de Clientes
-create table Clientes
+create table IF NOT EXISTS `Clientes`
 (
 idCliente int auto_increment,
 nombreCliente varchar(50) not null,
@@ -79,10 +79,12 @@ primary key(idCliente),
 FOREIGN KEY(idEstado) REFERENCES Estados(idEstado)
 );
 
+ALTER TABLE `bd_techno_factory`.`Clientes` 
+ADD COLUMN `dni` VARCHAR(13) NOT NULL AFTER `idCliente`;
 
 
 #Ventas
-create table Ventas
+create table IF NOT EXISTS `Ventas`
 (
 idVenta int auto_increment,
 fechaVenta datetime default now(),
@@ -95,7 +97,7 @@ FOREIGN KEY(idCliente) REFERENCES Clientes(idCliente)
 );
 
 #detalle Ventas
-create table DetalleVentas
+create table IF NOT EXISTS `DetalleVentas`
 (
 idVenta int ,
 idProducto int  not null,
@@ -107,7 +109,7 @@ FOREIGN KEY(idVenta) REFERENCES Ventas(idVenta)
 );
 
 #Tabla de Empleados
-create table Empleados
+create table IF NOT EXISTS `Empleados`
 (
 idEmpleado int auto_increment,
 nombreEmpleado varchar(50) not null,
@@ -122,7 +124,7 @@ FOREIGN KEY(idEstado) REFERENCES Estados(idEstado)
 
 
 #Tabla de Usuarios
-create table Usuarios
+create table  IF NOT EXISTS `Usuarios`
 (
 idUsuario int auto_increment,
 nombreUsuario varchar(50),
