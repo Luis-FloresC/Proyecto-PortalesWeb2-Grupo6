@@ -33,7 +33,7 @@
                             <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Diego López <a href="https://www.facebook.com/"><i  class="zmdi zmdi-facebook zmdi-hc-fw footer-social"> </i></a><a href="https://twitter.com/home"><i class="zmdi zmdi-twitter zmdi-hc-fw footer-social"></i></a></li>
                         </ul>
                         <ul class="list-unstyled">
-                            <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; José Varela <a href="https://www.facebook.com/"><i  class="zmdi zmdi-facebook zmdi-hc-fw footer-social"> </i></a><a href="https://twitter.com/home"><i class="zmdi zmdi-twitter zmdi-hc-fw footer-social"></i></a></li>
+                            <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; José Varela <a href="https://www.facebook.com/joseruben.varela.7/"><i  class="zmdi zmdi-facebook zmdi-hc-fw footer-social"> </i></a><a href="https://twitter.com/home"><i class="zmdi zmdi-twitter zmdi-hc-fw footer-social"></i></a></li>
                         </ul>
                         <ul class="list-unstyled">
                             <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; David Mendoza <a href="https://www.facebook.com/DavidMXZ/"><i  class="zmdi zmdi-facebook zmdi-hc-fw footer-social"> </i></a><a href="https://twitter.com/home"><i class="zmdi zmdi-twitter zmdi-hc-fw footer-social"></i></a></li>
