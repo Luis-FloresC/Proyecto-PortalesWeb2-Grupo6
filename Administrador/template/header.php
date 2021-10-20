@@ -1,14 +1,18 @@
 <?php 
 include('../Conexion/conexion.php');
 
+
+
 //Contar las filas de la tabla de productos
-$Seleccion = $conexion->prepare("select count(*) 'Total' from Productos;");
+$Seleccion = $conexion->prepare("select coalesce(count(*),0)'Total' from Productos;");
 $Seleccion->execute();
 $productoSeleccionado= $Seleccion->fetch(PDO::FETCH_LAZY);
 $totalProductos = $productoSeleccionado['Total'];
 
+
+
 //Contar las filas de la tabla de Clientes
-$Seleccion = $conexion->prepare("select count(*) 'Total' from Clientes;");
+$Seleccion = $conexion->prepare("select coalesce(count(*),0) 'Total' from Clientes;");
 $Seleccion->execute();
 $productoSeleccionado= $Seleccion->fetch(PDO::FETCH_LAZY);
 $totalClientes = $productoSeleccionado['Total'];
@@ -30,6 +34,22 @@ $Seleccion = $conexion->prepare("select count(*) 'Total' from Empleados;");
 $Seleccion->execute();
 $productoSeleccionado= $Seleccion->fetch(PDO::FETCH_LAZY);
 $totalEmpleados = $productoSeleccionado['Total'];
+
+$txtUser = (isset($_POST['txtUser']))?$_POST['txtUser']:"";
+$txtContra = (isset($_POST['txtContra']))?$_POST['txtContra']:"";
+
+
+    $Query = $conexion->prepare("call `Login`('$txtUser','$txtContra');");					
+    $Query->execute();
+    $usuarioSeleccionado= $Query->fetch(PDO::FETCH_LAZY);
+    $txtId = $usuarioSeleccionado['id'];
+    $txtNombre = $usuarioSeleccionado['nombre'];
+    $txtApellido = $usuarioSeleccionado['apellido'];
+    $cargo = $usuarioSeleccionado['cargo'];
+    $txtNombreUsuario = $usuarioSeleccionado['user'];
+    $txtpass = $usuarioSeleccionado['contra'];
+    $txtEmail = $usuarioSeleccionado['correo'];
+    $txtIsEmpleado = $usuarioSeleccionado['isEmpleado'];
 
 ?>
 
@@ -128,7 +148,7 @@ $totalEmpleados = $productoSeleccionado['Total'];
                    <img src="assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box">
                 </figure>
                 <li style="color:#fff; cursor:default;">
-                    <span class="all-tittles">Admin Name</span>
+                    <span class="all-tittles"><?php echo "$txtNombre $txtApellido"; ?></span>
                 </li>
                 <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
                     <i class="zmdi zmdi-power"></i>
