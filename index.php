@@ -28,7 +28,10 @@ if(!empty($accion))
         {
             $pag = "/Administrador/menu.php";
         }
-     
+        else
+        {
+            $pag = "Cliente.php";
+        }
         
         $var = "Bienvenido al Sistema $txtNombre $txtApellido...";
         echo "<script> alert('".$var."'); </script>";
