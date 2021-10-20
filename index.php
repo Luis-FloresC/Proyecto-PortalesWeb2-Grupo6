@@ -5,16 +5,17 @@ include('Conexion/conexion.php');
 $txtUser = (isset($_POST['txtUser']))?$_POST['txtUser']:"";
 $txtContra = (isset($_POST['txtContra']))?$_POST['txtContra']:"";
 $accion = (isset($_POST['accion']))?$_POST['accion']:"";
-$pag = "Administrador/menu.php";
+
 if(!empty($accion))
 {
     $Seleccion = $conexion->prepare("call `Login`('$txtUser','$txtContra');");
-					
+    $pag = "/Administrador/menu.php";			
     $Seleccion->execute();
     $usuarioSeleccionado= $Seleccion->fetch(PDO::FETCH_LAZY);
     $txtNombre = $usuarioSeleccionado['nombre'];
     $txtApellido = $usuarioSeleccionado['apellido'];
-
+    $txtIsEmpleado = $usuarioSeleccionado['isEmpleado'];
+    
     if(empty($usuarioSeleccionado))
     {
         $var = "Usuario o Contraseña incorrecta...";
@@ -22,13 +23,15 @@ if(!empty($accion))
     }
     else
     {
-            $var = "Bienvenido al Sistema $txtNombre $txtApellido...";
-            echo "<script> alert('".$var."'); </script>";
-        if(!$txtIsEmpleado)
+          
+        if(!$txtIsEmpleado == 1)
         {
-            $pag ="Cliente.php";
+            $pag = "/Administrador/menu.php";
         }
-       
+     
+        
+        $var = "Bienvenido al Sistema $txtNombre $txtApellido...";
+        echo "<script> alert('".$var."'); </script>";
     }  
 }
 
