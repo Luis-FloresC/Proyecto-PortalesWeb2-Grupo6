@@ -1,3 +1,39 @@
+<?php 
+include('../Conexion/conexion.php');
+
+//Contar las filas de la tabla de productos
+$Seleccion = $conexion->prepare("select count(*) 'Total' from Productos;");
+$Seleccion->execute();
+$productoSeleccionado= $Seleccion->fetch(PDO::FETCH_LAZY);
+$totalProductos = $productoSeleccionado['Total'];
+
+//Contar las filas de la tabla de Clientes
+$Seleccion = $conexion->prepare("select count(*) 'Total' from Clientes;");
+$Seleccion->execute();
+$productoSeleccionado= $Seleccion->fetch(PDO::FETCH_LAZY);
+$totalClientes = $productoSeleccionado['Total'];
+
+  //Contar las filas de la tabla de Ventas
+$Seleccion = $conexion->prepare("select count(*) 'Total' from Ventas;");
+$Seleccion->execute();
+$productoSeleccionado= $Seleccion->fetch(PDO::FETCH_LAZY);
+$totalVentas = $productoSeleccionado['Total'];
+
+//Contar las filas de la tabla de Categorias
+$Seleccion = $conexion->prepare("select count(*) 'Total' from Categorias;");
+$Seleccion->execute();
+$productoSeleccionado= $Seleccion->fetch(PDO::FETCH_LAZY);
+$totalCategorias = $productoSeleccionado['Total'];
+
+//Contar las filas de la tabla de Empleados
+$Seleccion = $conexion->prepare("select count(*) 'Total' from Empleados;");
+$Seleccion->execute();
+$productoSeleccionado= $Seleccion->fetch(PDO::FETCH_LAZY);
+$totalEmpleados = $productoSeleccionado['Total'];
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -66,7 +102,7 @@
                             
                            
                             <li>
-                                <a href="#"><i class="zmdi zmdi-view-list zmdi-hc-fw"></i>&nbsp;&nbsp; Lista De Productos<span class="label label-danger pull-right label-mhover">7</span></a>
+                                <a href="#"><i class="zmdi zmdi-view-list zmdi-hc-fw"></i>&nbsp;&nbsp; Lista De Productos<span class="label label-danger pull-right label-mhover"><?php  echo $totalProductos; ?></span></a>
                             </li>
                         </ul>
                     </li>

@@ -1,4 +1,10 @@
-<?php include('template/header.php'); ?>
+<?php 
+include('template/header.php');
+
+ 
+
+ 
+?>
 
 <div class="container">
     <div class="page-header">
@@ -9,27 +15,27 @@
             <article class="tile">
                 <div class="tile-icon full-reset"><i class="zmdi zmdi-face"></i></div>
                 <div class="tile-name all-tittles">Clientes</div>
-                <div class="tile-num full-reset">7</div>
+                <div class="tile-num full-reset"><?php echo $totalClientes; ?></div>
             </article>
             <article class="tile">
             <div class="tile-icon full-reset"><i class="zmdi zmdi-desktop-mac"></i></div>
                 <div class="tile-name all-tittles">Productos</div>
-                <div class="tile-num full-reset">70</div>
+                <div class="tile-num full-reset"><?php echo $totalProductos; ?></div>
             </article>
             <article class="tile">
                 <div class="tile-icon full-reset"><i class="zmdi zmdi-money"></i></div>
                 <div class="tile-name all-tittles">Ventas</div>
-                <div class="tile-num full-reset">11</div>
+                <div class="tile-num full-reset"><?php echo $totalVentas; ?></div>
             </article>
             <article class="tile">
                 <div class="tile-icon full-reset"><i class="zmdi zmdi-bookmark-outline"></i></div>
                 <div class="tile-name all-tittles">categorías</div>
-                <div class="tile-num full-reset">11</div>
+                <div class="tile-num full-reset"><?php echo $totalCategorias; ?></div>
             </article>
             <article class="tile">
                 <div class="tile-icon full-reset"><i class="zmdi zmdi-assignment-account"></i></div>
                 <div class="tile-name all-tittles">Empleados</div>
-                <div class="tile-num full-reset">17</div>
+                <div class="tile-num full-reset"><?php echo $totalEmpleados; ?></div>
             </article>
       
            
