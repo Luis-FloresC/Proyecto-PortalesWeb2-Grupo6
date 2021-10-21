@@ -95,7 +95,7 @@ if(!empty($accion))
       </script>
     <div class="container">
 
-        <form action='<?php echo $pag; ?>' method= 'post'>
+        <form action='\Proyecto-PortalesWeb2-Grupo6/Administrador/menu.php' method= 'post'>
         <div class = "form-group">
         <label for="txtUser">Usuario</label>
         <input type="text" class="form-control" name="txtUser" aria-describedby="emailHelp" placeholder="Enter email">

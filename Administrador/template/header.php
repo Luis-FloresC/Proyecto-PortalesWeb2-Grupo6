@@ -108,9 +108,9 @@ $txtContra = (isset($_POST['txtContra']))?$_POST['txtContra']:"";
                         <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Empleados <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                         <ul class="list-unstyled">
                           <!--  <li><a href="admin.html"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo administrador</a></li>-->
-                            <li ><a href="#"><i class="zmdi zmdi-save zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Empleado</a></li>
-                            <li><a href="#"><i class="zmdi zmdi-edit zmdi-hc-fw"></i>&nbsp;&nbsp; Modificar Empleado</a></li>
-                            <li><a href="#"><i class="zmdi zmdi-delete zmdi-hc-fw"></i>&nbsp;&nbsp; Eliminar Empleado</a></li>
+                            <li ><a href="Empleado.php"><i class="zmdi zmdi-save zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Empleado</a></li>
+                            <li><a href="Empleado.php"><i class="zmdi zmdi-edit zmdi-hc-fw"></i>&nbsp;&nbsp; Modificar Empleado</a></li>
+                            <li><a href="Empleado.php"><i class="zmdi zmdi-delete zmdi-hc-fw"></i>&nbsp;&nbsp; Eliminar Empleado</a></li>
                         </ul>
                     </li>
                     <li>

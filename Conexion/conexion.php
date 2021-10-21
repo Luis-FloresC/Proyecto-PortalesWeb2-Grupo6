@@ -5,9 +5,9 @@ $host = $_SERVER['SERVER_NAME'];
 ///Base de Datos mysql
 $bd = "bd_techno_factory";
 //User
-$user = "luis";
+$user = "gemart";
 //Contraseña
-$contra = "luis1234";
+$contra = "Jamart1590@";
 
 try {
 
